@@ -1,38 +1,282 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background-color: #b6b9c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
+}
+
+.wrapper {
+  margin: 50px;
+}
+
+.phone {
+  height: 90vh;
+  width: 320px;
+  background-color: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+.app-background {
+  height: 86vh;
+  width: 290px;
+  background-image: url(rainy.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 35px;
+  position: relative;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.div {
+  width: 165px;
+  height: 20px;
+  background-color: #fff;
+  position: absolute;
+  left: 78px;
+  top: 14px;
+  border-radius: 0 0 20px 20px;
+  z-index: 10;
+}
+
+i {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.lower-section {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 15px;
+}
+
+.upper-section {
+  height: 75%;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 2px solid rgba(204, 204, 204, 0.164);
+  position: relative;
+}
+
+.upper-section .location {
+  position: absolute;
+  top: 25%;
+  color: #fff;
+  padding: 0 10px;
+}
+
+.upper-section .weather-value {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  padding: 0 10px;
+}
+
+.upper-section .weather-condition {
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 > span {
+  font-weight: 200;
+  font-size: 180px;
+  position: absolute;
+  top: -20%;
+  left: 60%;
+  margin-top: 30px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+h2 {
+  font-weight: 500;
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+svg {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.date {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.74);
+}
+.lower-section > div {
+  color: #fff;
+  font-size: 13px;
+  width: 33.3333%;
+  display: flex;
+  justify-content: start;
+  font-weight: 500;
+  position: relative;
+  font-weight: 500;
+}
+
+.lower-section > div:nth-child(2) {
+  justify-content: center;
+}
+
+.lower-section > div:nth-child(3) {
+  justify-content: end;
+}
+
+.value {
+  position: absolute;
+  top: 30%;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.value span {
+  position: absolute;
+  top: 45px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.App {
+  display: flex;
+}
+
+.home-background {
+  height: 86vh;
+  width: 290px;
+  background-image: url(home.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 35px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.opening-background {
+  height: 86vh;
+  width: 290px;
+  background-image: url(home.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 35px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  position: absolute;
+  top: 30%;
+
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+.logo {
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+
+.logo > p {
+  font-family: "Lobster";
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo > p:hover {
+  cursor: pointer;
+}
+form {
+  position: absolute;
+  top: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  justify-content: space-around;
+  height: 100px;
+}
+form input {
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 80%;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.text-box {
+  border-bottom: 2px solid #fff;
+  width: 70%;
+  font-size: 15px;
+  box-shadow: 0px 0px 1px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  width: 70%;
+  height: 30px;
+  background: #fff;
+  color: rgb(61, 61, 122);
+  text-shadow: none;
+  font-weight: 700;
+  padding: 20px 30px;
+  font-size: 15px;
+  border: 2.5px solid #fff;
+  line-height: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: whitesmoke;
+  color: rgb(61, 61, 122);
+  transition: all;
+}
+.toggle-menu {
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+.toggle-menu svg {
+  font-size: 10px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
