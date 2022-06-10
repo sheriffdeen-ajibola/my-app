@@ -1,4 +1,4 @@
-const Location = () => {
+const Location = (data) => {
   const dateConstructor = (d) => {
     let months = [
       "January",
@@ -56,7 +56,7 @@ const Location = () => {
               />
             </svg>
             <div className="location">
-              <h2>Port Harcourt</h2>
+              <h2>{data.name}</h2>
               <div className="date">{dateConstructor(new Date())}</div>
             </div>
             <div className="weather-value">

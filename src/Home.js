@@ -1,28 +1,6 @@
 import Wrapper from "./Wrapper";
-import { useEffect, useState } from "react";
 
-const Home = () => {
-  const [city, setCity] = useState("lagos");
-  const [weather, setWeather] = useState("lagos");
-
-  const search = (event) => {
-    if (event.key === "Enter") {
-      fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=07852dd92542c49b2947f696b27f0fee`
-      )
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          setWeather(data);
-          setCity("");
-          console.log(data);
-        });
-    }
-  };
-
-  useEffect(() => search(), []);
-
+const Home = ({ onChange, onKeyPress, query }) => {
   return (
     <Wrapper>
       <div className="home">
@@ -49,18 +27,13 @@ const Home = () => {
             <input
               type="text"
               placeholder="Enter city name"
-              onChange={(e) => setCity(e.target.value)}
-              value={city}
-              onKeyPress={search}
+              onChange={onChange}
+              value={query}
+              onKeyPress={onKeyPress}
             />
           </div>
 
-          <input
-            type="button"
-            className="btn"
-            value="Get Device Location"
-            onClick={search}
-          />
+          <input type="button" className="btn" value="Get Device Location" />
         </form>
       </div>
     </Wrapper>
