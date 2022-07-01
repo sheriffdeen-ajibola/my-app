@@ -1,36 +1,7 @@
-const Location = (data) => {
-  const dateConstructor = (d) => {
-    let months = [
-      "January",
-      "february",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
+import { dateConstructor } from "./utils";
 
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-
-    return `${day} ${date} ${month} ${year}`;
-  };
+const Location = ({ data }) => {
+  console.log("location", { data });
 
   return (
     <div className="wrapper">
@@ -56,12 +27,15 @@ const Location = (data) => {
               />
             </svg>
             <div className="location">
-              <h2>{data.name}</h2>
+              <h2>
+                {data.name}
+              </h2>
               <div className="date">{dateConstructor(new Date())}</div>
             </div>
             <div className="weather-value">
               <h1>
-                20 <span>&#176;</span>
+                {data.main && Math.round(data.main.temp)}
+                <span>&#176;</span>
               </h1>
 
               <div className="weather-condition">
@@ -73,7 +47,7 @@ const Location = (data) => {
             <div className="lower-section-wind">
               <p>Wind</p>
               <div className="wind value">
-                53 <br /> <span> km/h </span>
+                {data.main && data.wind.speed} <br /> <span> km/h </span>
               </div>
             </div>
             <div className="lower-section-rain">
@@ -85,7 +59,7 @@ const Location = (data) => {
             <div className="lower-section-humidity">
               <p>Humidity</p>
               <div className="humidity value">
-                92 <br /> <span> % </span>
+                {data.main && data.main.humidity} <br /> <span> % </span>
               </div>
             </div>
           </section>

@@ -1,8 +1,12 @@
 import Wrapper from "./Wrapper";
 
-const Home = ({ onChange, onKeyPress, query }) => {
+const Home = ({ onChange, onKeyPress, query, result }) => {
+  console.log({ query, result });
   return (
     <Wrapper>
+      <div className="logo">
+        <p>WeatherLens</p>
+      </div>
       <div className="home">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +26,7 @@ const Home = ({ onChange, onKeyPress, query }) => {
         <div className="info-text">
           <p></p>
         </div>
-        <form>
+        <div className="form">
           <div className="text-box">
             <input
               type="text"
@@ -32,9 +36,10 @@ const Home = ({ onChange, onKeyPress, query }) => {
               onKeyPress={onKeyPress}
             />
           </div>
-
-          <input type="button" className="btn" value="Get Device Location" />
-        </form>
+          <div className="btn">Get Device Location</div>
+          {/* <input type="button" className="btn" value="Get Device Location" /> */}
+          {/* {result ? <p>{result.main}</p> : <p>loading result</p>} */}
+        </div>
       </div>
     </Wrapper>
   );

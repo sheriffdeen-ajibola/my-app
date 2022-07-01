@@ -6,7 +6,7 @@ import Location from "./Location";
 
 const api = {
   key: "07852dd92542c49b2947f696b27f0fee",
-  base: "https://api.openweathermap.org/data/2.5/",
+  base: "https://api.openweathermap.org/data/2.5/"
 };
 
 function App() {
@@ -31,8 +31,9 @@ function App() {
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search}
         query={query}
+        result={weather}
       />
-      <Location data={this.data} />
+      <Location data={weather} />
     </div>
   );
 }

@@ -5,12 +5,7 @@ const Wrapper = ({ children }) => {
     <div className="wrapper">
       <div className="phone">
         <div className="div"></div>
-        <div className="home-background">
-          <div className="logo">
-            <p>WeatherLens</p>
-          </div>
-          {children}
-        </div>
+        <div className="home-background">{children}</div>
       </div>
     </div>
   );
